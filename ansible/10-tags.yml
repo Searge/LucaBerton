@@ -1,0 +1,16 @@
+﻿---
+- name: Using tags
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Example task 1
+      debug:
+        msg: "This is an example task 1"
+      tags:
+        - tag1
+
+    - name: Example task 2
+      debug:
+        msg: "This is an example task 2"
+      tags:
+        - tag2
