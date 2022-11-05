@@ -1,0 +1,17 @@
+﻿---
+- name: Filter a List with selectattr
+  hosts: localhost
+  gather_facts: true
+  tasks:
+    - name: all features
+      ansible.builtin.debug:
+        var: "ansible_facts.eno1.features"
+
+    - name: filter features
+      ansible.builtin.debug:
+        msg: >-
+          {{
+          (ansible_facts.eno1.features |
+          dict2items |
+          selectattr("value", "match", "on"))
+          }}
