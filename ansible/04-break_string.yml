@@ -1,0 +1,20 @@
+﻿---
+- name: break string in vars demo
+  hosts: localhost
+  gather_facts: no
+  vars:
+    multiline: |
+      This is a multiline string
+      will appear the same in the output
+      as it does in the playbook
+    oneline: >
+      This is a oneline string
+      will appear as a single line in the output
+      not as it does in the playbook
+  tasks:
+    - name: print multiline string
+      ansible.builtin.debug:
+        msg: "{{ multiline }}"
+    - name: print oneline string
+      ansible.builtin.debug:
+        var: oneline
