@@ -1,5 +1,11 @@
 ---
 # .ansible-lint
+
+# List of rules to to silence them completely:
+skip_list: # or 'warn_list' to ignore them but still show them
+  - command-instead-of-shell # Use shell only when shell functionality is required
+  - no-changed-when # Commands should not change things if nothing needs doing
+
 # exclude_paths included in this file are parsed relative to this file's location
 # and not relative to the CWD of execution. CLI arguments passed to the --exclude
 # option will be parsed relative to the CWD of execution.
