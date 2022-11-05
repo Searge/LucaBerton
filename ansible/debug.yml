@@ -3,5 +3,8 @@
   hosts: localhost
   gather_facts: no
   tasks:
-    - name: debug message
+    - name: say hello
       ansible.builtin.debug:
+    - name: say something
+      ansible.builtin.debug:
+        msg: "something"
