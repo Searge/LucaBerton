@@ -4,9 +4,10 @@
 # and not relative to the CWD of execution. CLI arguments passed to the --exclude
 # option will be parsed relative to the CWD of execution.
 exclude_paths:
-  - .venv/ # implicit unless exclude_paths is defined in config
   - .git/
-  - ansible/inventory/group_vars/
+  - .venv/ # implicit unless exclude_paths is defined in config
+  - .vscode
+  - ansible/inventory/
   - ansible/roles/
 
 use_default_rules: true
@@ -14,4 +15,4 @@ use_default_rules: true
 kinds:
   - playbook: "ansible/*.{yml,yaml}"
   - tasks: "ansible/includes/*.yml"
-  - yaml: "ansible/inventory/*"
+  - vars: "ansible/inventory/group_vars/*"
