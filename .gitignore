@@ -4,7 +4,6 @@ thumbs.db
 haslo
 
 # IDEs
-/.vscode
 /.idea
 /.buildpath
 /.cache
@@ -20,12 +19,12 @@ haslo
 **.pyc
 
 # Provisioning
-/provisioning/roles/*
-/provisioning/*.retry
+/ansible/roles/*
+/ansible/*.retry
 
 # Tests
-/provisioning/inventory/group_vars/test
-/provisioning/inventory/test
+/ansible/inventory/group_vars/test
+/ansible/inventory/test
 
 # Pipenv
 /.venv
