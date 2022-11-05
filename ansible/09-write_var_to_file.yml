@@ -1,0 +1,34 @@
+﻿---
+- name: Write variable to a file
+  hosts: localhost
+  vars:
+    fruit: "banana"
+    src_template: "fruit.j2"
+    output: "/tmp/{{ fruit }}"
+
+  tasks:
+    - name: Write variable to a file with copy module
+      copy:
+        content: "{{ fruit }}"
+        dest: "{{ output }}-copy.txt"
+        mode: 0644
+      register: copy_file_output
+
+    - name: Write variable to a file with template module
+      ansible.builtin.template:
+        src: "{{ src_template }}"
+        dest: "{{ output }}-template.txt"
+        mode: 0644
+      register: template_file_output
+
+    - name: Print files output
+      ansible.builtin.debug:
+        msg: |
+          Copy file output: {{ copy_file_output }}
+          Template file output: {{ template_file_output }}
+
+    - name: Print files contents
+      ansible.builtin.debug:
+        msg: |
+          Copy file contents: {{ lookup('file', copy_file_output.dest) }}
+          Template file contents: {{ lookup('file', template_file_output.dest) }}
