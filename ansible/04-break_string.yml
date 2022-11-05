@@ -15,6 +15,9 @@
     - name: print multiline string
       ansible.builtin.debug:
         msg: "{{ multiline }}"
+    - name: print multiline string on separate lines
+      ansible.builtin.debug:
+        msg: "{{ multiline.split('\n') }}"
     - name: print oneline string
       ansible.builtin.debug:
         var: oneline
