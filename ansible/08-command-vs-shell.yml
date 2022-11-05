@@ -1,0 +1,18 @@
+﻿---
+- name: Command vs Shell
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Check uptime with command
+      ansible.builtin.command: uptime
+      register: command_output
+
+    - name: Check uptime with shell
+      ansible.builtin.shell: uptime
+      register: shell_output
+
+    - name: Print commands output
+      ansible.builtin.debug:
+        msg: |
+          Command output: {{ command_output.stdout }}
+          Shell output: {{ shell_output.stdout }}
