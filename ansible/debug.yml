@@ -2,9 +2,20 @@
 - name: debug module demo
   hosts: localhost
   gather_facts: no
+  vars:
+    fruit: "apple"
   tasks:
     - name: say hello
       ansible.builtin.debug:
     - name: say something
       ansible.builtin.debug:
         msg: "something"
+    - name: say var
+      ansible.builtin.debug:
+        var: fruit
+    - name: say human redable
+      ansible.builtin.debug:
+        msg: "Our fruit is {{ fruit }}"
+        # display this message only after -vv
+        # is specified
+        verbosity: 2
