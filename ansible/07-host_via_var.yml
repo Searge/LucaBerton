@@ -1,0 +1,11 @@
+﻿---
+- name: "Host via var"
+  hosts: "{{ host }}"
+  tasks:
+    - name: "Print hostname"
+      debug:
+        var: ansible_hostname
+  vars:
+    host: "localhost"
+    # or, just type the hostname here:
+    # ./play -e host=localhost ansible/07-host_via_var.yml
