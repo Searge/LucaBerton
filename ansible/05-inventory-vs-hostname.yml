@@ -1,0 +1,16 @@
+---
+- name: inventory vs hostname
+  hosts: localhost
+  gather_facts: true
+  tasks:
+    - name: print inventory_hostname
+      debug:
+        var: inventory_hostname
+
+    - name: print ansible_hostname
+      debug:
+        var: ansible_hostname
+
+    - name: print ansible_fqdn
+      debug:
+        var: ansible_fqdn
