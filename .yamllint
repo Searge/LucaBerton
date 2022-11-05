@@ -3,12 +3,13 @@
 ignore: |
   .venv/
   ansible/roles/
-  ansible/inventory/group_vars/
+  ansible/inventory/*
 
 yaml-files:
-  - "ansible/inventory/*"
-  - "*.yaml"
+  - "ansible/inventory/group_vars/*"
+  - "**/*.yml"
   - "*.yml"
+  - "*.yaml"
   - ".yamllint"
 
 extends: default
