@@ -1,0 +1,48 @@
+---
+# For all rules
+ignore: |
+  .venv/
+  ansible/roles/
+  ansible/inventory/group_vars/
+
+yaml-files:
+  - "ansible/inventory/*"
+  - "*.yaml"
+  - "*.yml"
+  - ".yamllint"
+
+extends: default
+
+rules:
+  braces:
+    min-spaces-inside: 0
+    max-spaces-inside: 1
+
+  brackets:
+    min-spaces-inside: 0
+    max-spaces-inside: 1
+
+  colons:
+    max-spaces-before: 0
+    max-spaces-after: 12
+
+  commas:
+    max-spaces-before: 0
+    min-spaces-after: 1
+    max-spaces-after: 1
+
+  comments:
+    require-starting-space: true
+    ignore-shebangs: true
+    min-spaces-from-content: 2
+
+  comments-indentation:
+    level: warning
+
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+
+  line-length: disable
+
+  truthy: disable

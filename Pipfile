@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+ansible-lint = "*"
+yamllint = "*"
+
+[packages]
+ansible = "*"
+ansible-core = "==2.11.*"
+cryptography = ">=1.2.3"
+
+[requires]
+python_version = "3"

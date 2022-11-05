@@ -1,0 +1,7 @@
+﻿---
+- name: debug module demo
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: debug message
+      ansible.builtin.debug:

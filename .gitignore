@@ -1,0 +1,32 @@
+# Platform-specific excludes
+thumbs.db
+.DS_Store
+haslo
+
+# IDEs
+/.vscode
+/.idea
+/.buildpath
+/.cache
+/.metadata
+/.project
+/.settings
+/.gitattributes
+/.retry
+/nbproject
+/sitemap
+/templates/*
+# Python compiled files
+**.pyc
+
+# Provisioning
+/provisioning/roles/*
+/provisioning/*.retry
+
+# Tests
+/provisioning/inventory/group_vars/test
+/provisioning/inventory/test
+
+# Pipenv
+/.venv
+
