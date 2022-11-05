@@ -1,0 +1,15 @@
+﻿---
+# extra vars file:
+#   - ansible/include/extra_vars.yml
+# execute:
+# ./play --extra-vars='@ansible/include/extra_vars.yml' \
+#   ansible/03-extra_vars.yml
+- name: extra variable demo
+  hosts: localhost
+  gather_facts: no
+  vars:
+    fruit: "banana"
+  tasks:
+    - name: print variable
+      ansible.builtin.debug:
+        msg: "fruit is {{ fruit }}"
