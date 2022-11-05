@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "path": ".."
+    }
+  ],
+  "settings": {
+    "python.pipenvPath": "~/.local/bin/pipenv",
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "ansible.ansible.path": ".venv/bin/ansible",
+    "ansible.validation.lint.path": ".venv/bin/ansible-lint",
+    "files.associations": {
+      "ansible/*.yml": "ansible",
+      "ansible/inventory/*": "ini",
+      "ansible/inventory/group_vars/*": "yaml"
+    }
+  }
+}
