@@ -1,0 +1,23 @@
+﻿---
+- name: remote environment
+  hosts: localhost
+  gather_facts: false
+  environment:
+    EXAMPLE_VAR: "example value"
+
+  tasks:
+    - name: display environment variable
+      ansible.builtin.command: echo $EXAMPLE_VAR
+      register: result_var_1
+
+    - name: display environment variable 2
+      ansible.builtin.command: echo $EXAMPLE_VAR
+      environment:
+        EXAMPLE_VAR: "example value 2"
+      register: result_var_2
+
+    - name: print all execution results
+      ansible.builtin.debug:
+        msg: |-
+          var_1: {{ result_var_1.stdout }}
+          var_2: {{ result_var_2.stdout }}
