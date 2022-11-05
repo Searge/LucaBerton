@@ -5,6 +5,7 @@ haslo
 
 # IDEs
 /.idea
+/.vscode/*
 /.buildpath
 /.cache
 /.metadata
@@ -15,6 +16,10 @@ haslo
 /nbproject
 /sitemap
 /templates/*
+
+# Add vscode workspace settings
+!.vscode/*.code-workspace
+
 # Python compiled files
 **.pyc
 
