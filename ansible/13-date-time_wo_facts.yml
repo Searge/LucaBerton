@@ -1,0 +1,16 @@
+﻿---
+- name: date and time without Ansible facts
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: get date and time
+      ansible.builtin.debug:
+        msg: "{{ lookup('pipe', 'date +%Y-%m-%d@%H:%M:%S') }}"
+
+    - name: get ISO 8601 date and time maunally
+      ansible.builtin.debug:
+        msg: "{{ lookup('pipe', 'date +%Y-%m-%dT%H:%M:%S%z') }}"
+
+    - name: get ISO 8601 date and time with dateutil
+      ansible.builtin.debug:
+        msg: "{{ lookup('pipe', 'date --iso-8601=seconds') }}"
