@@ -1,0 +1,18 @@
+﻿---
+- name: magic vars
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: magic variables
+      ansible.builtin.debug:
+        var: "{{ item }}"
+      loop:
+        - ansible_config_file
+        - playbook_dir
+        - inventory_dir
+        - ansible_check_mode
+        - ansible_diff_mode
+        - ansible_forks
+        - ansible_verbosity
+        - inventory_hostname
+        - ansible_version
