@@ -1,0 +1,8 @@
+﻿---
+- name: Display current Ansible path
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: print current playbook_dir
+      debug:
+        msg: "{{ playbook_dir }}"
