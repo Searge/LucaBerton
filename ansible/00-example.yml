@@ -1,0 +1,35 @@
+﻿---
+- name: example playbook
+  hosts: localhost
+  gather_facts: false
+  vars:
+    my_var: "example text"
+    my_bool: true
+    my_cities:
+      - "London"
+      - "Paris"
+      - "New York"
+
+  tasks:
+    - name: print var
+      ansible.builtin.debug:
+        msg: "value {{ my_var }}"
+      # handle only if sth changed
+      notify: reload
+
+    - name: print if meet condition
+      vars:
+        my_var: "condition is meet"
+      ansible.builtin.debug:
+        msg: "value {{ my_var }}"
+      when: my_bool
+
+    - name: print cities
+      ansible.builtin.debug:
+        msg: "city {{ item }}"
+      loop: "{{ my_cities }}"
+
+  handlers:
+    - name: reload
+      ansible.builtin.debug:
+        msg: "example reload"
