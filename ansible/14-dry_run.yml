@@ -1,12 +1,12 @@
 ﻿---
 # check command with diff
 # ./play -K --check --diff ansible/14-dry_run.yml
-- name: root login enabled
+- name: Root login enabled
   hosts: localhost
   become: true
   gather_facts: false
   tasks:
-    - name: PermitRootLogin
+    - name: Enable PermitRootLogin
       lineinfile:
         dest: /etc/ssh/sshd_config
         regexp: "^PermitRootLogin"
@@ -16,7 +16,7 @@
         - restart sshd
 
   handlers:
-    - name: restart sshd
+    - name: Restart sshd
       ansible.builtin.service:
         name: sshd
         state: restarted
