@@ -7,6 +7,7 @@
   "settings": {
     "python.pipenvPath": "~/.local/bin/pipenv",
     "python.defaultInterpreterPath": ".venv/bin/python",
+    "python.formatting.provider": "black",
     "ansible.ansible.path": ".venv/bin/ansible",
     "ansible.validation.lint.path": ".venv/bin/ansible-lint",
     "files.associations": {
