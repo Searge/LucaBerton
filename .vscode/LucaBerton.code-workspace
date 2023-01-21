@@ -15,12 +15,13 @@
       "ansible/inventory/*": "ini",
       "ansible/inventory/group_vars/*": "yaml"
     },
+    "yaml.schemaStore.enable": true,
     "yaml.schemas": {
       "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook": [
-        "./ansible/*.yml",
-        "./ansible/*.yaml"
+        "/ansible/*.yml",
+        "/ansible/*.yaml"
       ],
-      "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json": ".ansible-lint"
+      "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json": "/.ansible-lint"
     }
   }
 }
