@@ -13,6 +13,13 @@
       "ansible/*.yml": "ansible",
       "ansible/inventory/*": "ini",
       "ansible/inventory/group_vars/*": "yaml"
+    },
+    "yaml.schemas": {
+      "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook": [
+        "./ansible/*.yml",
+        "./ansible/*.yaml"
+      ],
+      "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json": ".ansible-lint"
     }
   }
 }
